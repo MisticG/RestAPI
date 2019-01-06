@@ -4,27 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="addHoro.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <title>Document</title>
 </head>
 <body>
     <div>
-
-        <form>
-            Födelsedatum: <input type="date"> 
+        <form name="formular">
+            Födelsedatum: <input id="dates" type="date" name="datum"> 
             <br>
             <br>
-            <input type="submit" onclick="addDate" value="Spara mitt horoskop">
+            <button onclick="addDate()">Spara mitt horoskop</button>
             <br>
             <br>
-            <button onclick="updateHoroscope">Uppdatera mitt horoskop</button> 
+            <button onclick="updateHoroscope()">Uppdatera mitt horoskop</button> 
             <br>
             <br>
-            <button onclick="eraseHoroscope">Radera horoskop</button> 
+            <button onclick="deleteHoroscope()">Radera horoskop</button> 
             <br>
             <br>
         </form>
-
-        </div>
-
+    </div>
 </body>
+
 </html>
