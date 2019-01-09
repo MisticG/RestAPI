@@ -7,6 +7,8 @@ $year = strtok($stringDate, "-");
 $month = strtok("-");
 $day = strtok("-");
 
+if(!isset($_SESSION['horoscope'])) {
+
 //I "signs.php" skapas en array med horoskopsobjekt/stjärntecken.
 include "signs.php";
 
@@ -21,6 +23,8 @@ foreach($signs as $sign) {
     $count++;
 }
 
+//stjärntecknet sparas i session
 $_SESSION['horoscope'] = $signs[$signIndex];
+}
 
 ?>
