@@ -13,7 +13,7 @@ function inItSite() {
             document.getElementById("tecken").innerHTML = data.name;
             document.getElementById("teckenInfo").innerHTML = data.signInfo;
         }
-        //else gör ingenting
+        //else gör ingentin
     })
     
     }
