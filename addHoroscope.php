@@ -25,7 +25,6 @@ if(!isset($_SESSION['horoscope'])) {
 
 //stjärntecknet sparas i session
     $_SESSION['horoscope'] = $signs[$signIndex];
-
 }else{
     echo "false";
 }

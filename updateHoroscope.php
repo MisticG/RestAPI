@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
+if($_SERVER['REQUEST_METHOD'] == 'PUT'){
 
     $putData = file_get_contents("php://input");
     $year = strtok($putData, "-");
@@ -9,9 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT'){
     $day = strtok("-");
 
     if(isset($_SESSION['horoscope'])) {
-        
         include 'signs.php';
-
         $count = 0;
         $signIndex = -1;
 

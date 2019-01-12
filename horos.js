@@ -11,10 +11,8 @@ function inItSite() {
             document.getElementById("tecken").innerHTML = data.name;
             document.getElementById("teckenInfo").innerHTML = data.signInfo;
         }
-        //else gör ingenting
     })
-    
-    }
+}
     
 function addHoroscope() {
     
@@ -24,7 +22,7 @@ function addHoroscope() {
      
     fetch('addHoroscope.php', {
         method: 'POST',
-        //credentials: 'include',
+        credentials: 'include',
         body: formData
     }).then(function(response){
         if(response.status >= 200 && response.status < 300) {
@@ -33,7 +31,6 @@ function addHoroscope() {
     }).then(function(response){
        console.log(response);
     })
-
     inItSite();
 }
 
@@ -52,7 +49,6 @@ function updateHoroscope() {
     }).then(function(response){
        console.log(response);
     })
-
     inItSite();
 }
 
@@ -71,9 +67,7 @@ function deleteHoroscope() {
             console.log(data);
         }
     })
-
-    inItSite();
-    
+    inItSite();  
 }
 
     
