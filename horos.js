@@ -4,8 +4,6 @@ function inItSite() {
     }).then(function(response){
         return response.json()
     }).then(function(data) {
-        //console.log(data.name);
-        //console.log(data.name.localeCompare("ERR"));
 
         /*Om det har returnerats ett riktigt horoskop (d.v.s. det finns ett horoskop i $SESSION)
         Skriv ut det i div:en på html-sidan */
@@ -33,7 +31,30 @@ function addHoroscope() {
             return response.text();
         }throw new Error(response.statusText)
     }).then(function(response){
-       // console.log(response);
+       console.log(response);
+    })
+
+    inItSite();
+}
+
+function updateHoroscope() {
+    
+    var birthDate = document.forms["formular"]["dates"].value;
+   //var formData = new FormData();
+    //formData.append('birthDate', birthDate);
+    
+     
+    fetch('updateHoroscope.php', {
+        method: 'PUT',
+        
+        credentials: 'include',
+        body: JSON.stringify(birthDate)
+    }).then(function(response){
+        if(response.status >= 200 && response.status < 300) {
+            return response.text();
+        }throw new Error(response.statusText)
+    }).then(function(response){
+       console.log(response);
     })
 
     inItSite();
