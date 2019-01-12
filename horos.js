@@ -40,13 +40,9 @@ function addHoroscope() {
 function updateHoroscope() {
     
     var birthDate = document.forms["formular"]["dates"].value;
-   //var formData = new FormData();
-    //formData.append('birthDate', birthDate);
-    
      
     fetch('updateHoroscope.php', {
         method: 'PUT',
-        
         credentials: 'include',
         body: birthDate
     }).then(function(response){
@@ -59,3 +55,25 @@ function updateHoroscope() {
 
     inItSite();
 }
+
+function deleteHoroscope() {
+
+    fetch('deleteHoroscope.php', {
+        method: 'DELETE',
+    }).then(function(response){
+        return response.text()
+    }).then(function(data) {
+        if(data.localeCompare("true") == 1) {
+            console.log(data)
+            document.getElementById("tecken").innerHTML = " ";
+            document.getElementById("teckenInfo").innerHTML = " ";
+        }else{
+            console.log(data);
+        }
+    })
+
+    inItSite();
+    
+}
+
+    
