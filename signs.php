@@ -1,6 +1,6 @@
 <?php
 
-function createSign($name, $mon1, $day1, $mon2, $day2, $info) {
+function createSign($name, $mon1, $day1, $mon2, $day2, $info, $signImage) {
     $newSign = new stdClass();
     $newSign->name = $name;
     $newSign->month1 = $mon1;
@@ -8,13 +8,14 @@ function createSign($name, $mon1, $day1, $mon2, $day2, $info) {
     $newSign->day1 = $day1;
     $newSign->day2 = $day2;
     $newSign->signInfo = $info;
+    $newSign->signImage = $signImage;
 
     return $newSign;
 }
 
 $signs = array();
 
-$signs[0] = createSign('Väduren', '03', '21', '04', '19', 'Varm, entusiastisk, social, känslosam, stressad, impulsstyrd, aggressiv');
+$signs[0] = createSign('Väduren', '03', '21', '04', '19', 'Varm, entusiastisk, social, känslosam, stressad, impulsstyrd, aggressiv', 'vaduren.jpg');
 $signs[1] = createSign('Oxen', '04', '20', '05', '20', 'Envis, beskyddande, lojal, tålmodig, uthållig, stabil, praktisk, realistisk');
 $signs[2] = createSign('Tvillingarna', '05', '21', '06', '21', 'Kvick, kommunikativ, ytlig, nyfiken, självständig, modig, impulsiv, stressad');
 $signs[3] = createSign('Kräftan', '06', '22', '07', '22', 'Föräldern, beskyddaren, bevararen, den trofaste, den lojale & sympatiske');

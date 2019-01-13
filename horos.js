@@ -11,6 +11,7 @@ function inItSite() {
         if(data.name.localeCompare("Error") != 0) {
             document.getElementById("tecken").innerHTML = data.name;
             document.getElementById("teckenInfo").innerHTML = data.signInfo;
+            document.getElementById("signImg").src = "signImages/" + data.signImage;
         }
     })
 }
@@ -36,7 +37,6 @@ function addHoroscope() {
         }throw new Error(response.statusText)
     }).then(function(response){
        console.log(response);
-       buttonTw.style.display = "block";
     })
     inItSite();
 }
