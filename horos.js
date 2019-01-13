@@ -1,4 +1,5 @@
 function inItSite() {
+
     fetch('viewHoroscope.php', {
         method: 'GET',
     }).then(function(response){
@@ -16,6 +17,11 @@ function inItSite() {
     
 function addHoroscope() {
     
+    var buttonTwo = document.getElementById("buttonTwo");
+    var buttonThree = document.getElementById("buttonThree");
+    buttonTwo.style.visibility = "visible";
+    buttonThree.style.visibility = "visible";
+
     var birthDate = document.forms["formular"]["datum"].value;
     var formData = new FormData();
     formData.append('birthDate', birthDate);
@@ -30,6 +36,7 @@ function addHoroscope() {
         }throw new Error(response.statusText)
     }).then(function(response){
        console.log(response);
+       buttonTw.style.display = "block";
     })
     inItSite();
 }
@@ -54,8 +61,13 @@ function updateHoroscope() {
 
 function deleteHoroscope() {
 
+    var buttonTwo = document.getElementById("buttonTwo");
+    var buttonThree = document.getElementById("buttonThree");
+    buttonTwo.style.visibility = "hidden";
+    buttonThree.style.visibility = "hidden";
+
     fetch('deleteHoroscope.php', {
-        method: 'DELETE',
+    method: 'DELETE',
     }).then(function(response){
         return response.text()
     }).then(function(data) {
