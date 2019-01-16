@@ -5,3 +5,11 @@
 #buttonThree {
     visibility: hidden;
 }
+
+body {
+    background-image: url(signImages/planet1.jpg);
+}
+
+h1, h2 {
+    color: whitesmoke;
+}
