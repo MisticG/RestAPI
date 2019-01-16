@@ -6,37 +6,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Which zodiac are you?</title>
     <script src="horos.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="signs.css">
-    
 </head>
+
 <body onload = "inItSite()">
     <div class="header">
         <h1>Ta reda på ditt Horoskop</h1>
-    </div>
-   <div class="dateInput"> 
+    <br>
     <form name="formular">
-        <h2>Ange ditt födelsedatum</h2> <input id="dates" type="date" name="datum"> 
+        <h2>Ange ditt födelsedatum</h2> 
+        <br>
+        <input id="dates" type="date" name="datum"> 
     </form>
     </div>
 
     <div>
         <br>
         <br>
-        <button onclick="addHoroscope()">Spara mitt horoskop</button>
+        <button  class="btn btn-light" onclick="addHoroscope()">Spara mitt horoskop</button>
         <br>
         <br>
-        <button id="buttonTwo" onclick="updateHoroscope()">Uppdatera mitt horoskop</button> 
+        <button id="buttonTwo"  class="btn btn-light" onclick="updateHoroscope()">Uppdatera mitt horoskop</button> 
         <br>
         <br>
-        <button id="buttonThree" onclick="deleteHoroscope()">Radera horoskop</button> 
+        <button id="buttonThree"  class="btn btn-light" onclick="deleteHoroscope()">Radera horoskop</button> 
         <br>
         <br>
-        <p id="demo"></p>
     </div>
     
     <div>
-        <h2><p id="tecken"></p>
-        <p id="teckenInfo"></p></h2>
+        <h3><p id="tecken"></p>
+        <p id="teckenInfo"></p></h3>
         <img id="signImg">
     </div>
        

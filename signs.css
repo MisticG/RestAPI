@@ -6,10 +6,37 @@
     visibility: hidden;
 }
 
-body {
-    background-image: url(signImages/planet1.jpg);
+#signImg {
+    margin-top: -4em;
+    margin-left: 1em;
 }
 
-h1, h2 {
+#dates {
+    margin-left: 10em;
+}
+
+body {
+    background-image: url(signImages/planet1.jpg);
+    margin-top: 3em;
+    margin-left: 4em;
+}
+
+.header {
+    margin-left: 5em;
+}
+
+button {
+    margin-left: 15em;
+}
+
+h1, h2, h3 {
     color: whitesmoke;
+}
+
+h1 {
+    margin-left: 1em;
+}
+
+h2 {
+    margin-left: 2em;
 }
