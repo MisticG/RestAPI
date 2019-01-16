@@ -1,4 +1,6 @@
 # RestAPI
-wie18G 190116
+Inlämningsuppgift wie18G 190117
 
-(Click here[https://misticg.github.io/RestAPI/])
+[Click here for sample](https://misticg.github.io/RestAPI/)
+
+
