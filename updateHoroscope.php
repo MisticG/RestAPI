@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if($_SERVER['REQUEST_METHOD'] == 'PUT'){
+if($_SERVER['REQUEST_METHOD'] === 'PUT'){
 
     $putData = file_get_contents("php://input");
     $year = strtok($putData, "-");
@@ -20,12 +20,15 @@ if($_SERVER['REQUEST_METHOD'] == 'PUT'){
             }
             $count++;
         }
-        echo "true";
-
-    //stjärntecknet sparas i session
+        
+        //stjärntecknet sparas i session
         $_SESSION['horoscope'] = $signs[$signIndex];
-        }else{
-            echo "false";
+
+        //Returnera att det gick bra
+        echo "true";
+    }else{
+        //Inget horoskop fanns att uppdatera...returnera "fel"
+        echo "false";
     }
 }
 

@@ -1,18 +1,20 @@
 function inItSite() {
-
+    
     fetch('viewHoroscope.php', {
         method: 'GET',
     }).then(function(response){
         return response.json()
     }).then(function(data) {
-
+        
         /*Om det har returnerats ett riktigt horoskop (d.v.s. det finns ett horoskop i $SESSION)
         Skriv ut det i div:en på html-sidan */
         if(data.name.localeCompare("Error") != 0) {
             document.getElementById("tecken").innerHTML = data.name;
             document.getElementById("teckenInfo").innerHTML = data.signInfo;
             document.getElementById("signImg").src = "signImages/" + data.signImage;
+            document.getElementById("signImg").style.visibility = "visible";
         }
+
     })
 }
     
@@ -22,7 +24,7 @@ function addHoroscope() {
     var buttonThree = document.getElementById("buttonThree");
     buttonTwo.style.visibility = "visible";
     buttonThree.style.visibility = "visible";
-
+ 
     var birthDate = document.forms["formular"]["datum"].value;
     var formData = new FormData();
     formData.append('birthDate', birthDate);
@@ -35,14 +37,17 @@ function addHoroscope() {
         if(response.status >= 200 && response.status < 300) {
             return response.text();
         }throw new Error(response.statusText)
-    }).then(function(response){
-       console.log(response);
-    })
-    inItSite();
+    }).then(function(data){
+        
+        if(data.localeCompare("true") == 0){          
+            inItSite();
+        }
+
+    }) 
 }
 
 function updateHoroscope() {
-    
+
     var birthDate = document.forms["formular"]["dates"].value;
      
     fetch('updateHoroscope.php', {
@@ -53,10 +58,13 @@ function updateHoroscope() {
         if(response.status >= 200 && response.status < 300) {
             return response.text();
         }throw new Error(response.statusText)
-    }).then(function(response){
-       console.log(response);
-    })
-    inItSite();
+    }).then(function(data){
+       
+       if(data.localeCompare("true") == 0){
+            inItSite();
+       }
+       
+    })  
 }
 
 function deleteHoroscope() {
@@ -71,15 +79,13 @@ function deleteHoroscope() {
     }).then(function(response){
         return response.text()
     }).then(function(data) {
-        if(data.localeCompare("true") == 1) {
-            console.log(data)
+        
+        if(data.localeCompare("true") == 1) {        
             document.getElementById("tecken").innerHTML = " ";
             document.getElementById("teckenInfo").innerHTML = " ";
-        }else{
-            console.log(data);
+            document.getElementById("signImg").style.visibility = "hidden";
+            inItSite();
         }
-    })
-    inItSite();  
-}
 
-    
+    })  
+}

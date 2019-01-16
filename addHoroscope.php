@@ -21,11 +21,18 @@ if(!isset($_SESSION['horoscope'])) {
         }
         $count++;
     }
-    echo "true";
+   
+    if($signIndex != -1){
+        //stjärntecknet sparas i session
+        $_SESSION['horoscope'] = $signs[$signIndex];
+        echo "true";
+    }
+    else{
+        echo "false";
+    }
+}
 
-//stjärntecknet sparas i session
-    $_SESSION['horoscope'] = $signs[$signIndex];
-}else{
+else{
     echo "false";
 }
 

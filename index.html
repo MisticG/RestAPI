@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Which sign are you?</title>
+    <title>Which zodiac are you?</title>
     <script src="horos.js"></script>
     <link rel="stylesheet" href="signs.css">
     
 </head>
 <body onload = "inItSite()">
-   <div> 
+    <div class="header">
+        <h1>Ta reda på ditt Horoskop</h1>
+    </div>
+   <div class="dateInput"> 
     <form name="formular">
-        Födelsedatum: <input id="dates" type="date" name="datum"> 
+        <h2>Ange ditt födelsedatum</h2> <input id="dates" type="date" name="datum"> 
     </form>
     </div>
 
@@ -28,11 +31,12 @@
         <button id="buttonThree" onclick="deleteHoroscope()">Radera horoskop</button> 
         <br>
         <br>
+        <p id="demo"></p>
     </div>
     
     <div>
-        <p id="tecken"></p>
-        <p id="teckenInfo"></p>
+        <h2><p id="tecken"></p>
+        <p id="teckenInfo"></p></h2>
         <img id="signImg">
     </div>
        
