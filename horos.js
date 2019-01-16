@@ -9,8 +9,8 @@ function inItSite() {
         /*Om det har returnerats ett riktigt horoskop (d.v.s. det finns ett horoskop i $SESSION)
         Skriv ut det i div:en på html-sidan */
         if(data.name.localeCompare("Error") != 0) {
-            document.getElementById("tecken").innerHTML = data.name;
-            document.getElementById("teckenInfo").innerHTML = data.signInfo;
+            document.getElementById("tecken").innerHTML = "Du är " + data.name + ":";
+            document.getElementById("teckenInfo").innerHTML = data.signInfo + ".";
             document.getElementById("signImg").src = "signImages/" + data.signImage;
             document.getElementById("signImg").style.visibility = "visible";
         }
