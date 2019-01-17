@@ -6,13 +6,6 @@
     visibility: hidden;
 }
 
-#signImg {
-    width: 500px;
-    height: 500px;
-    margin-top: -2.5em;
-    margin-left: 5em;
-}
-
 #dates {
     margin-left: 10em;
 }
@@ -21,6 +14,14 @@ body {
     background-image: url(signImages/planet1.jpg);
     margin-top: 3em;
     margin-left: 4em;
+}
+
+#signImg {
+    width: 500px;
+    height: 500px;
+    margin-top: -2.5em;
+    margin-left: 5em;
+    visibility: hidden;
 }
 
 .header {
