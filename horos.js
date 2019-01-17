@@ -38,7 +38,8 @@ function addHoroscope() {
             return response.text();
         }throw new Error(response.statusText)
     }).then(function(data){
-        
+
+    //om "true" finns i data så har POSTanropet gått bra. Uppdatera då sidan. Annars gör inget.
         if(data.localeCompare("true") == 0){          
             inItSite();
         }
@@ -59,7 +60,7 @@ function updateHoroscope() {
             return response.text();
         }throw new Error(response.statusText)
     }).then(function(data){
-       
+    //om "true" finns i data så har PUTanropet gått bra. Uppdatera då sidan. Annars gör inget.
        if(data.localeCompare("true") == 0){
             inItSite();
        }
@@ -79,7 +80,9 @@ function deleteHoroscope() {
     }).then(function(response){
         return response.text()
     }).then(function(data) {
-        
+
+        /*Om det har returnerats ett riktigt horoskop (d.v.s. det finns ett horoskop i $SESSION)
+        så "nollställ" div-en */
         if(data.localeCompare("true") == 1) {        
             document.getElementById("tecken").innerHTML = " ";
             document.getElementById("teckenInfo").innerHTML = " ";

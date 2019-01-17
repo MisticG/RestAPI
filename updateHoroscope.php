@@ -2,14 +2,17 @@
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] === 'PUT'){
-
+//"tar bort "-" i strängen som PUT'ats för att ange datum
     $putData = file_get_contents("php://input");
     $year = strtok($putData, "-");
     $month = strtok("-");
     $day = strtok("-");
 
+    // om $_SESSION har ett innehåll kommer det "nya" stjärntecknet att skrivas ut
     if(isset($_SESSION['horoscope'])) {
-        include 'signs.php';
+
+    //lägger till signs.php
+        require 'signs.php';
         $count = 0;
         $signIndex = -1;
 

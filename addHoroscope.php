@@ -1,11 +1,12 @@
 <?php
 session_start();
-
+//"tar bort "-" i strängen som POST'ats för att ange datum
 $stringDate = $_POST["birthDate"];
 $year = strtok($stringDate, "-");
 $month = strtok("-");
 $day = strtok("-");
 
+//om $_session inte innehåller något så skrivs ett stjärntecken ut och sparas i $_session
 if(!isset($_SESSION['horoscope'])) {
 
 //I "signs.php" skapas en array med horoskopsobjekt/stjärntecken.
